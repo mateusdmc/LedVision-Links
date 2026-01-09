@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LedVisi.on | Comunicação Out of Home</title>
+    <link rel="shortcut icon" href="img/favicon.svg" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        :root {
+            --dark-color: #333;
+            --gray-color: #6c757d;
+            --shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            --transition: all 0.3s ease;
+        }
+        
+        body {
+            background: #141414;
+            color: var(--dark-color);
+            min-height: 100vh;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .container {
+            max-width: 480px;
+            width: 100%;
+            margin: 0 auto;
+        }
+        
+        .linktree-card {
+            background-color: rgb(0, 0, 0);
+            border-radius: 20px;
+            padding: 30px;
+            box-shadow: var(--shadow);
+            text-align: center;
+            overflow: hidden;
+            position: relative;
+        }
+        
+        .linktree-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 6px;
+            background: #00DC00;
+        }
+        
+        .profile-section {
+            margin-bottom: 25px;
+        }
+        
+        .profile-img {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            object-fit: cover;
+            padding: 4px;
+        }
+        
+        .profile-name {
+            font-size: 28px;
+            font-weight: 700;
+            margin-bottom: 5px;
+            color: white;
+        }
+        
+        .profile-bio {
+            color: var(--gray-color);
+            font-size: 16px;
+            line-height: 1.5;
+            margin-bottom: 10px;
+            padding: 0 10px;
+        }
+        
+        .links-section {
+            margin-bottom: 25px;
+        }
+        
+        .link-item {
+            display: flex;
+            align-items: center;
+            background-color: #00DC00;
+            border-radius: 12px;
+            padding: 15px 20px;
+            margin-bottom: 15px;
+            text-decoration: none;
+            color: var(--dark-color);
+            font-weight: 600;
+            transition: var(--transition);
+        }
+        
+        .link-item:hover {
+            transform: translateY(-3px);
+            box-shadow: var(--shadow);
+            background-color: white;
+        }
+        
+        .link-icon {
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: #000;
+            border-radius: 50%;
+            margin-right: 15px;
+            color: white;
+            font-size: 18px;
+        }
+        
+        .link-text {
+            flex: 1;
+            text-align: left;
+        }
+        
+        .link-arrow {
+            color: var(--gray-color);
+            font-size: 14px;
+        }
+        
+        .footer {
+            text-align: center;
+            margin-top: 30px;
+            color: var(--gray-color);
+            font-size: 14px;
+        }
+
+        @media (max-width: 480px) {
+            .linktree-card { padding: 25px 20px; }
+            .profile-img { width: 160px; height: 160px; }
+            .profile-name { font-size: 24px; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="linktree-card">
+            <div class="profile-section">
+                <img src="./img/perfil-ig.png" alt="Foto de perfil" class="profile-img">
+                <h1 class="profile-name">LedVisi.on</h1>
+                <p class="profile-bio">Comunicação Out of Home</p>
+            </div>
+            
+            <div class="links-section">
+                <a href="https://api.whatsapp.com/send?phone=558999915822&text=Ol%C3%A1%2C+vim+pelo+%2AInstagram%2A+e+gostaria+de+mais+informa%C3%A7%C3%B5es%21" class="link-item" target="_blank">
+                    <div class="link-icon">
+                        <i class="fab fa-whatsapp"></i>
+                    </div>
+                    <div class="link-text">Chamar no WhatsApp</div>
+                    <div class="link-arrow">
+                        <i class="fas fa-chevron-right"></i>
+                    </div>
+                </a>
+            </div>
+            
+            <div class="footer">
+                <p>© 2026 LedVisi.on. Todos os direitos reservados.</p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const links = document.querySelectorAll('.link-item');
+        links.forEach(link => {
+            link.addEventListener('click', function() {
+                this.style.transform = 'scale(0.98)';
+                setTimeout(() => { this.style.transform = ''; }, 150);
+            });
+        });
+    </script>
+</body>
+</html>
